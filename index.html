@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You 💙</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0a2540, #000000);
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 320px;
+      position: relative;
+    }
+
+    h1 {
+      color: black;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 26px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .yes {
+      background: #1e90ff;
+      color: white;
+    }
+
+    .no {
+      background: black;
+      color: white;
+      position: absolute;
+      left: 180px;
+      top: 170px;
+      transition: left 0.2s ease, top 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Will you be perhaps my Valentine........? </h1>
+    <button class="yes" onclick="yesClick()">Yes 💙</button>
+    <button class="no" onmouseover="moveNo()">No 🖤</button>
+  </div>
+
+  <script>
+    function yesClick() {
+      alert("YAYAYAYAY, I LOVE YOUU. Mwaaa");
+    }
+
+    function moveNo() {
+      const button = document.querySelector(".no");
+      const card = document.querySelector(".card");
+
+      const maxX = card.clientWidth - button.clientWidth;
+      const maxY = card.clientHeight - button.clientHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      button.style.left = x + "px";
+      button.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
+
